@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+    .login-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" name="username" placeholder="Benutzername" required>
+      <input type="password" id="password" name="password" placeholder="Passwort" required>
+      <button type="submit">Einloggen</button>
+    </form>
+
+    <div class="footer">
+      <p><a href="#">Passwort vergessen?</a></p>
+      <p>Kein Konto? <a href="#">Jetzt registrieren</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Test-Benutzerdaten
+    const testUser = {
+      username: "testuser",
+      password: "testpass"
+    };
+
+    // Login-Funktion
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();  // Verhindert das Standard-Formular-Verhalten
+
+      // Eingabewerte abrufen
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Überprüfen, ob die Eingaben mit den Testdaten übereinstimmen
+      if (username === testUser.username && password === testUser.password) {
+        alert("Login erfolgreich! Weiterleitung...");
+        // Nach erfolgreichem Login auf eine andere Seite weiterleiten (zum Beispiel index.html)
+        setTimeout(function() {
+          window.location.href = "seite.html"; // Hier den Pfad zur gewünschten Seite einfügen
+        }, 2000);  // Warten 2 Sekunden bevor weitergeleitet wird
+      } else {
+        alert("Ungültiger Benutzername oder Passwort.");
+      }
+    });
+  </script>
+
+</body>
+</html>
