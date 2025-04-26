@@ -1,0 +1,64 @@
+🧭 Welche Arten von technischer Dokumentation für Code gibt es?
+Es gibt verschiedene Arten – je nach Zielgruppe (z. B. Entwickler, Benutzer, Admins) und Verwendungszweck:
+
+1. Code-Kommentare & Inline-Dokumentation
+Direkt im Quellcode enthalten.
+
+Beschreibt Funktionen, Parameter, Rückgabewerte, Logik.
+
+Tools wie JSDoc (JavaScript), Docstrings (Python), JavaDoc (Java) nutzen das.
+
+Beispiel:
+
+javascript
+Kopieren
+Bearbeiten
+/**
+ * Prüft, ob ein Benutzer eingeloggt ist.
+ * @param {string} email
+ * @param {string} password
+ * @returns {boolean}
+ */
+function checkLogin(email, password) { ... }
+2. README.md (oder Startseite der Doku)
+Kurzbeschreibung des Projekts.
+
+Wie man startet, verwendet, testet.
+
+Immer im Projekt-Root.
+
+3. Setup- / Installationsanleitung
+Erklärt, wie man das Projekt installiert, startet und testet.
+
+Beispiel: INSTALL.md, Teil des README oder Wiki.
+
+4. API-Dokumentation
+Dokumentiert Schnittstellen bei Web-APIs (REST, GraphQL etc.).
+
+Zeigt Endpunkte, Parameter, Rückgaben, Fehlercodes.
+
+Tools: Swagger / OpenAPI, Postman Docs.
+
+5. Systemarchitektur-Dokumentation
+Zeigt, wie das Projekt aufgebaut ist (Module, Klassen, Services).
+
+Oft mit Diagrammen (z. B. UML, Komponenten-, Sequenzdiagramme).
+
+Wichtig bei größeren Systemen.
+
+6. Benutzerdokumentation (User Manual)
+Für nicht-technische Nutzer.
+
+Erklärt die Bedienung des Programms oder Tools.
+
+Mit Screenshots, Schritt-für-Schritt-Anleitungen.
+
+7. Entwicklerdokumentation
+Für andere Entwickler, die den Code erweitern oder warten.
+
+Umfasst Build-Prozess, Code-Konventionen, Tests, Deployments.
+
+8. Fehler- und Debug-Dokumentation
+Beschreibt bekannte Bugs, Workarounds, Log-Formate.
+
+Häufig in Entwickler-Wikis oder im TROUBLESHOOTING.md.
