@@ -5054,7 +5054,7 @@
 		)
 		(uuid "b8cc1b52-33f9-4e13-9eae-69774e6d8da4")
 	)
-	(text "Mounting Holes and Miscelleanious"
+	(text "Mounting Holes and Miscellaneous"
 		(exclude_from_sim no)
 		(at 378.968 249.936 0)
 		(effects
