@@ -1,93 +1,18 @@
 //////////////////////////////////////////////////////////////////////////
 //             TinyBasic Plus + PS2 keyboard                            //
-//               for VGA monitor output                                 // 
+//   a modified version for the "RetroTerminal"                         //
+//   modified by blagabe88296@th-nuernberg.de                           // 
 //////////////////////////////////////////////////////////////////////////
 //
 // Authors: Mike Field <hamster@snap.net.nz>
 //	    Scott Lawrence <yorgle@gmail.com>
 //          Brian O'Dell <megamemnon@megamemnon.com>
 //
-// Introduction of PS2 keyboard, December 2017.  
-//      Author: Rob Cai <rocaj74@gmail.com> 
 //      Connections: 
 //      Keyboard Data to Arduino pin 8;
 //      Keyboard IRQ (clock) to Arduino pin 3;
 
 #define kVersion "v0.14"
-
-// v0.14: 2013-11-07
-//      Input command always set the variable to 99
-//      Modified Input command to accept an expression using getn()
-//      Syntax is "input x" where x is any variable
-//
-// v0.13: 2013-03-04
-//      Support for Arduino 1.5 (SPI.h included, additional changes for DUE support)
-//
-// v0.12: 2013-03-01
-//      EEPROM load and save routines added: EFORMAT, ELIST, ELOAD, ESAVE, ECHAIN
-//      added EAUTORUN option (chains to EEProm saved program on startup)
-//      Bugfixes to build properly on non-arduino systems (PROGMEM #define workaround)
-//      cleaned up a bit of the #define options wrt TONE
-//
-// v0.11: 2013-02-20
-//      all display strings and tables moved to PROGMEM to save space
-//      removed second serial
-//      removed pinMode completely, autoconf is explicit
-//      beginnings of EEPROM related functionality (new,load,save,list)
-//
-// v0.10: 2012-10-15
-//      added kAutoConf, which eliminates the "PINMODE" statement.
-//      now, DWRITE,DREAD,AWRITE,AREAD automatically set the PINMODE appropriately themselves.
-//      should save a few bytes in your programs.
-//
-// v0.09: 2012-10-12
-//      Fixed directory listings.  FILES now always works. (bug in the SD library)
-//      ref: http://arduino.cc/forum/index.php/topic,124739.0.html
-//      fixed filesize printouts (added printUnum for unsigned numbers)
-//      #defineable baud rate for slow connection throttling
-//e
-// v0.08: 2012-10-02
-//      Tone generation through piezo added (TONE, TONEW, NOTONE)
-//
-// v0.07: 2012-09-30
-//      Autorun buildtime configuration feature
-//
-// v0.06: 2012-09-27
-//      Added optional second serial input, used for an external keyboard
-//
-// v0.05: 2012-09-21
-//      CHAIN to load and run a second file
-//      RND,RSEED for random stuff
-//      Added "!=" for "<>" synonym
-//      Added "END" for "STOP" synonym (proper name for the functionality anyway)
-//
-// v0.04: 2012-09-20
-//      DELAY ms   - for delaying
-//      PINMODE <pin>, INPUT|IN|I|OUTPUT|OUT|O
-//      DWRITE <pin>, HIGH|HI|1|LOW|LO|0
-//      AWRITE <pin>, [0..255]
-//      fixed "save" appending to existing files instead of overwriting
-// 	Updated for building desktop command line app (incomplete)
-//
-// v0.03: 2012-09-19
-//	Integrated Jurg Wullschleger whitespace,unary fix
-//	Now available through github
-//	Project renamed from "Tiny Basic in C" to "TinyBasic Plus"
-//	   
-// v0.02b: 2012-09-17  Scott Lawrence <yorgle@gmail.com>
-// 	Better FILES listings
-//
-// v0.02a: 2012-09-17  Scott Lawrence <yorgle@gmail.com>
-// 	Support for SD Library
-// 	Added: SAVE, FILES (mostly works), LOAD (mostly works) (redirects IO)
-// 	Added: MEM, ? (PRINT)
-// 	Quirk:  "10 LET A=B+C" is ok "10 LET A = B + C" is not.
-// 	Quirk:  INPUT seems broken?
-
-
-
-// IF testing with Visual C, this needs to be the first thing in the file.
-//#include "stdafx.h"
 
 
 char eliminateCompileErrors = 1;  // fix to suppress arduino build errors
